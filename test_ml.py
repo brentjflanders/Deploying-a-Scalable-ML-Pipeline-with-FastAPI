@@ -59,7 +59,6 @@ def test_model_metrics():
     assert isinstance(recall,float)
     assert isinstance(fbeta,float)
 
-    assert 0 <= precision <=1
-    assert 0 <= recall <=1
-    assert 0 <= fbeta <=1
-    
+    assert precision == pytest.approx(0.5)
+    assert recall == pytest.approx(1/3)
+    assert fbeta == pytest.approx(0.4)
